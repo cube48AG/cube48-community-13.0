@@ -18,7 +18,7 @@
     'author': "cube48 AG",
     'website': "https://www.cube48.de",
     'category': 'Tools',
-    'version': '12.0',
+    'version': '13.0',
     'depends': [
         'base',
     ],
