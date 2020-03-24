@@ -1,0 +1,10 @@
+ .o_home_menu {
+    // Fallback for browsers that doesn't support css gradients
+    background-position: center;
+    background-image: url("/debranding/static/description/back-ground.svg");
+    background-size: cover;
+}
+.o_main_navbar .dropdown-menu.show{
+	min-width: 120%;
+}
+
