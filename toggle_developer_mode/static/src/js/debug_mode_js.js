@@ -1,4 +1,4 @@
-odoo.define('toggle_developer_mode.DebugModeJs', function (require) {
+odoo.define('toggle_debug_mode.DebugModeJs', function (require) {
     "use strict";
 
 var DebugModeJs = require('web.UserMenu');
@@ -8,7 +8,7 @@ DebugModeJs.include({
         var self = this;
         return this._super.apply(this, arguments).then(function () {
             var mMode = 'normal';
-            if (window.location.href.indexOf('debug') > -1)
+            if (window.location.href.indexOf('debug=1') > -1)
                 mMode = 'debug';
             if (mMode == 'normal')
                 self.$('[data-menu="quitdebug"]').hide();
@@ -18,10 +18,10 @@ DebugModeJs.include({
     },
 
     _onMenuDebug: function () {
-        window.location = $.param.querystring(window.location.href, 'debug');
+        window.location = $.param.querystring(window.location.href, 'debug=1');
     },
     _onMenuQuitdebug: function () {
-        window.location.search = "?";
+        window.location = $.param.querystring(window.location.href, 'debug=0');
     },
 })
 
