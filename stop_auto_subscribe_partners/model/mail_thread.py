@@ -13,8 +13,7 @@ class MailThread(models.AbstractModel):
         ir_config = self.env['ir.config_parameter']
         app_stop_subscribe = bool(strtobool(ir_config.sudo().get_param('app_stop_subscribe')))
         if app_stop_subscribe:
-            partner_ids = list(x.partner_id.id for x in self.env['res.users'].search([('partner_id', 'in', partner_ids)]))
-            return super(MailThread, self).message_subscribe(partner_ids, channel_ids, subtype_ids)
+            return
         else:
             return super(MailThread, self).message_subscribe(partner_ids, channel_ids, subtype_ids)
 
@@ -30,7 +29,6 @@ class MailThread(models.AbstractModel):
         ir_config = self.env['ir.config_parameter']
         app_stop_subscribe = bool(strtobool(ir_config.sudo().get_param('app_stop_subscribe')))
         if app_stop_subscribe:
-            partner_ids = list(x.partner_id.id for x in self.env['res.users'].search([('partner_id', 'in', partner_ids)]))
-            return super(MailThread, self)._message_auto_subscribe_notify(partner_ids, template)
+            return
         else:
             return super(MailThread, self)._message_auto_subscribe_notify(partner_ids, template)
