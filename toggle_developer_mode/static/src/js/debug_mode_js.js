@@ -1,4 +1,4 @@
-odoo.define('toggle_debug_mode.DebugModeJs', function (require) {
+odoo.define('toggle_developer_mode.DebugModeJs', function (require) {
     "use strict";
 
 var DebugModeJs = require('web.UserMenu');
