@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_debranding" xml:space="preserve">
+    <t t-extend="UserMenu.Actions">
+        <t t-jquery="a[data-menu='documentation'], a[data-menu='support'], a[data-menu='account'], a[data-menu='shortcuts']"  t-operation="replace">
+        </t>
+    </t>
+
+
+    <t t-extend="HomeMenu.Content">
+        <t t-jquery="div.o_home_menu_footer" t-operation="replace">
+            <img src="/debranding/static/description/logo.png" width="600px" style="margin-top:35px" onerror="this.src='/debranding/static/description/logo.png'" />
+        </t>
+    </t>
+</templates>
